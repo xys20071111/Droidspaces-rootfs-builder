@@ -46,9 +46,8 @@ RUN apk update && apk upgrade && \
     # Python
     python3 \
     py3-pip \
-    # Docker (CLI and Compose)
-    docker-cli \
-    docker-compose \
+    # Docker
+    docker
     # DHCP client + openrc
     dhcpcd \
     openrc \
