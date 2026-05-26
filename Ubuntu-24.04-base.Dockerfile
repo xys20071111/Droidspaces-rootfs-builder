@@ -246,7 +246,7 @@ EOF
 done
 
 # Limit udev services to only start if hardware access is enabled
-for unit in systemd-udevd.service systemd-udev-trigger.service systemd-udev-settle.service; do
+for unit in systemd-udevd.service systemd-udev-trigger.service systemd-udev-settle.service systemd-udevd-control.socket systemd-udevd-kernel.socket; do
     if [ -f "$GUEST_SYSTEMD_PATH/$unit" ] || [ -f "/etc/systemd/system/multi-user.target.wants/$unit" ]; then
         mkdir -p "/etc/systemd/system/${unit}.d"
         cat > "/etc/systemd/system/${unit}.d/99-hwaccess-limit.conf" << 'EOF'
