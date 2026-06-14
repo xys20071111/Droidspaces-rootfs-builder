@@ -5,7 +5,7 @@
 ARG OPENWRT_VERSION=25.12-SNAPSHOT
 
 # Stage 1: official ARM64 rootfs as a file source (non-standard platform tag, no RUN here)
-FROM --platform=linux/aarch64_generic openwrt/rootfs:armsr-armv8-${OPENWRT_VERSION} AS owrt
+FROM --platform=linux/aarch64_generic immortalwrt/rootfs:armsr-armv8-${OPENWRT_VERSION} AS owrt
 
 # Stage 2: customize on scratch (=build arch) so opkg below runs aarch64 binaries under QEMU
 FROM scratch AS customizer
