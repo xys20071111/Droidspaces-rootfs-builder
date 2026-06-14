@@ -76,7 +76,7 @@ jobs:
 
   release:
     if: ${{ github.event.inputs.update_json_only != 'true' }}
-    needs: [setup, build, build-nixos]
+    needs: [setup, build]
     runs-on: ubuntu-latest
     permissions:
       contents: write
