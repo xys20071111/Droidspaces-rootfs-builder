@@ -2,7 +2,7 @@
 # Android kernels lack nf_tables, so this drops fw4/nftables for iptables-legacy
 # + fw3 (the stack VirtualAP's provision_openwrt() expects).
 
-ARG OPENWRT_VERSION=25.12.4
+ARG OPENWRT_VERSION=25.12-SNAPSHOT
 
 # Stage 1: official ARM64 rootfs as a file source (non-standard platform tag, no RUN here)
 FROM --platform=linux/aarch64_generic openwrt/rootfs:armsr-armv8-${OPENWRT_VERSION} AS owrt
@@ -100,11 +100,11 @@ config rule
 	option target 'ACCEPT'
 FWEOF
 
-# Install Simplified Chinese language pack.
-apk add luci-i18n-base-zh-cn
-
 echo 'net.ipv4.ip_forward=1' > /etc/sysctl.d/30-virtualap.conf
 echo "Droidspaces/VirtualAP OpenWrt image built on $(date)" > /etc/droidspaces
+
+# Install Simplified Chinese language pack.
+apk add luci-i18n-base-zh-cn
 
 # Trim opkg lists; keep /tmp (resolv.conf symlink + tmpfs at runtime)
 rm -rf /var/opkg-lists/* 2>/dev/null || true
