@@ -17,7 +17,7 @@ mkdir -p /var/lock /var/run /tmp
 apk update
 
 # Swap fw4/nftables for fw3/iptables-legacy (Android kernel has x_tables, not nf_tables)
-apk del --force-depends \
+apk del --purge \
     firewall4 nftables-json \
     kmod-nft-offload kmod-nft-nat kmod-nft-fib kmod-nft-core || true
 apk add iptables-zz-legacy ip6tables-zz-legacy firewall
@@ -30,9 +30,9 @@ grep -q '^aid_net_raw:'   /etc/group || echo 'aid_net_raw:x:3004:root'   >> /etc
 grep -q '^aid_net_admin:' /etc/group || echo 'aid_net_admin:x:3005:root' >> /etc/group
 
 # Confirm root's group membership via usermod, then drop shadow-utils
-opkg install shadow-utils
+apk add shadow-utils
 usermod -a -G aid_inet,aid_net_raw root || true
-opkg remove --force-depends shadow-utils
+apk del --purge shadow-utils
 
 # Upstream over eth0 (Droidspaces NAT); VirtualAP adds vaplan0 LAN at start time
 cat > /etc/config/network <<'NETEOF'
