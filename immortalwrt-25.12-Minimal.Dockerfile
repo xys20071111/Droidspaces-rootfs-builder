@@ -47,7 +47,10 @@ config interface 'wan'
 	option proto 'dhcp'
 NETEOF
 
-# fw3 zones: lan (vaplan, added by VirtualAP) -> masqueraded wan/eth0
+# fw3 zones: vaplan lives in an isolated 'guest' zone (NOT lan) so hotspot
+# clients reach only the internet (guest -> masqueraded wan/eth0) and never
+# other containers on lan. input REJECT blocks router services by default; we
+# punch holes below for DHCP + DNS (needed for a lease) and LuCI (admin UI).
 cat > /etc/config/firewall <<'FWEOF'
 config defaults
 	option syn_flood '1'
@@ -57,10 +60,16 @@ config defaults
 
 config zone
 	option name 'lan'
-	list network 'vaplan'
 	option input 'ACCEPT'
 	option output 'ACCEPT'
 	option forward 'ACCEPT'
+
+config zone
+	option name 'guest'
+	list network 'vaplan'
+	option input 'REJECT'
+	option output 'ACCEPT'
+	option forward 'DROP'
 
 config zone
 	option name 'wan'
@@ -74,6 +83,33 @@ config zone
 config forwarding
 	option src 'lan'
 	option dest 'wan'
+
+config forwarding
+	option src 'guest'
+	option dest 'wan'
+
+# Guest clients need DHCP + DNS from the router itself (input is REJECT)
+config rule
+	option name 'Allow-DHCP-Guest'
+	option src 'guest'
+	option proto 'udp'
+	option dest_port '67-68'
+	option target 'ACCEPT'
+
+config rule
+	option name 'Allow-DNS-Guest'
+	option src 'guest'
+	option proto 'tcp udp'
+	option dest_port '53'
+	option target 'ACCEPT'
+
+# LuCI reachable from the hotspot (password-protected); router services otherwise blocked
+config rule
+	option name 'Allow-LuCI-Guest'
+	option src 'guest'
+	option proto 'tcp'
+	option dest_port '80 443'
+	option target 'ACCEPT'
 
 config rule
 	option name 'Allow-DHCP-Renew'
