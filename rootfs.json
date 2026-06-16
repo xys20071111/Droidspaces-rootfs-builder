@@ -15,7 +15,7 @@
   {
     "name": "ImmortalWrt 25.12 - Minimal with zh-cn (iptables-legacy)",
     "distro": "OpenWrt",
-    "description": "Minimal ImmortalWrt 25.12 router rootfs built for Android kernels: nftables/fw4 stripped out in favor of iptables-legacy + fw3, with full firewall (NAT, zones, masquerade) working. Tuned for VirtualAP's managed-hotspot (container) mode.",
+    "description": "Notice: You need to add vaplan0 to interfaces manually.\nMinimal ImmortalWrt 25.12 router rootfs built for Android kernels: nftables/fw4 stripped out in favor of iptables-legacy + fw3, with full firewall (NAT, zones, masquerade) working. Tuned for VirtualAP's managed-hotspot (container) mode.",
     "architecture": "aarch64",
     "file": "ImmortalWrt-25.12-Minimal",
     "download_url": "https://github.com/xys20071111/Droidspaces-openwrt-rootfs-builder/releases/download/v20260616-125746/ImmortalWrt-25.12-Minimal-Droidspaces-rootfs-aarch64-20260616-v20260616-125746.tar.xz",
