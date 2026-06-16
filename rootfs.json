@@ -5,11 +5,11 @@
     "description": "Minimal OpenWrt 25.12 router rootfs built for Android kernels: nftables/fw4 stripped out in favor of iptables-legacy + fw3, with full firewall (NAT, zones, masquerade) working. Tuned for VirtualAP's managed-hotspot (container) mode.",
     "architecture": "aarch64",
     "file": "OpenWrt-25.12-Minimal",
-    "download_url": "https://github.com/Droidspaces/Droidspaces-rootfs-builder/releases/download/v20260613-175646/OpenWrt-24.10-Minimal-Droidspaces-rootfs-aarch64-20260613-v20260613-175646.tar.xz",
-    "sha256": "5f5d79ffed57b8bfcb64397c59c0f6653f732b54b6bbc44886e11289dc0750a4",
-    "size_bytes": 2990988,
-    "version": "v20260613-175646",
-    "build_date": "20260613",
+    "download_url": "https://github.com/xys20071111/Droidspaces-openwrt-rootfs-builder/releases/download/v20260616-125746/OpenWrt-25.12-Minimal-Droidspaces-rootfs-aarch64-20260616-v20260616-125746.tar.xz",
+    "sha256": "722b8ce4c75165dc86eedc4e24ce6da0421a055b7c9834dc76e92339ed77f488",
+    "size_bytes": 4765456,
+    "version": "v20260616-125746",
+    "build_date": "20260616",
     "author": "xys20071111"
   },
   {
@@ -18,11 +18,11 @@
     "description": "Minimal ImmortalWrt 25.12 router rootfs built for Android kernels: nftables/fw4 stripped out in favor of iptables-legacy + fw3, with full firewall (NAT, zones, masquerade) working. Tuned for VirtualAP's managed-hotspot (container) mode.",
     "architecture": "aarch64",
     "file": "ImmortalWrt-25.12-Minimal",
-    "download_url": "https://github.com/Droidspaces/Droidspaces-rootfs-builder/releases/download/v20260613-175646/OpenWrt-24.10-Minimal-Droidspaces-rootfs-aarch64-20260613-v20260613-175646.tar.xz",
-    "sha256": "5f5d79ffed57b8bfcb64397c59c0f6653f732b54b6bbc44886e11289dc0750a4",
-    "size_bytes": 2990988,
-    "version": "v20260613-175646",
-    "build_date": "20260613",
+    "download_url": "https://github.com/xys20071111/Droidspaces-openwrt-rootfs-builder/releases/download/v20260616-125746/ImmortalWrt-25.12-Minimal-Droidspaces-rootfs-aarch64-20260616-v20260616-125746.tar.xz",
+    "sha256": "3e522dbf4ae5d1713f12e29cf3d45d69ab3de4bd61adadcf7ec1d7ac4e17c499",
+    "size_bytes": 7524496,
+    "version": "v20260616-125746",
+    "build_date": "20260616",
     "author": "xys20071111"
   }
 ]
