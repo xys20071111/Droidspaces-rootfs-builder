@@ -5,11 +5,11 @@
     "description": "Minimal OpenWrt 25.12 router rootfs built for Android kernels: nftables/fw4 stripped out in favor of iptables-legacy + fw3, with full firewall (NAT, zones, masquerade) working. Tuned for VirtualAP's managed-hotspot (container) mode.",
     "architecture": "aarch64",
     "file": "OpenWrt-25.12-Minimal",
-    "download_url": "https://github.com/xys20071111/Droidspaces-openwrt-rootfs-builder/releases/download/v20260616-131937/OpenWrt-25.12-Minimal-Droidspaces-rootfs-aarch64-20260616-v20260616-131937.tar.xz",
-    "sha256": "cee97648951aac24213ddcec8b922a0715c20658e8d01b08502fa268d1c1770d",
-    "size_bytes": 4764780,
-    "version": "v20260616-131937",
-    "build_date": "20260616",
+    "download_url": "https://github.com/xys20071111/Droidspaces-openwrt-rootfs-builder/releases/download/v20260621-023817/OpenWrt-25.12-Minimal-Droidspaces-rootfs-aarch64-20260621-v20260621-023817.tar.xz",
+    "sha256": "09ddc3259002367d5cf4e1d646c4b30ee58b0e5079abca6c18259d6d5c4c36fc",
+    "size_bytes": 4766984,
+    "version": "v20260621-023817",
+    "build_date": "20260621",
     "author": "xys20071111"
   },
   {
@@ -18,11 +18,11 @@
     "description": "Notice: You need to add vaplan0 to interfaces manually.\nMinimal ImmortalWrt 25.12 router rootfs built for Android kernels: nftables/fw4 stripped out in favor of iptables-legacy + fw3, with full firewall (NAT, zones, masquerade) working. Tuned for VirtualAP's managed-hotspot (container) mode.",
     "architecture": "aarch64",
     "file": "ImmortalWrt-25.12-Minimal",
-    "download_url": "https://github.com/xys20071111/Droidspaces-openwrt-rootfs-builder/releases/download/v20260616-131937/ImmortalWrt-25.12-Minimal-Droidspaces-rootfs-aarch64-20260616-v20260616-131937.tar.xz",
-    "sha256": "b71e4cda2909df4d00ab804981ac4cf805a87435032167388b4d140a7e045af4",
-    "size_bytes": 7526628,
-    "version": "v20260616-131937",
-    "build_date": "20260616",
+    "download_url": "https://github.com/xys20071111/Droidspaces-openwrt-rootfs-builder/releases/download/v20260621-023817/ImmortalWrt-25.12-Minimal-Droidspaces-rootfs-aarch64-20260621-v20260621-023817.tar.xz",
+    "sha256": "0f0c54264b42bd085e32619ab751edd4a4474eef8e1b01f677296df2f1aa2e04",
+    "size_bytes": 7524916,
+    "version": "v20260621-023817",
+    "build_date": "20260621",
     "author": "xys20071111"
   }
 ]
